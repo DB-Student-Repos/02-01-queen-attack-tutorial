@@ -13,7 +13,9 @@ class Queen:
         return
 
     def can_attack(self, another_queen):
-        if ((self.row - another_queen.row) == 0):
+        if ((self.row == another_queen.row) and (self.column == another_queen.column)):
+            raise ValueError ("Invalid queen position: both queens in the same square")
+        elif ((self.row - another_queen.row) == 0):
             return True
         elif ((self.column - another_queen.column) == 0):
             return True
